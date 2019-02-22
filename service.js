@@ -41,8 +41,8 @@ angular.module('MyApp')
 				type: 'GET',
 				crossDomain: true,
 				dataType: 'json',
-				//url: 'https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Skelet0r?api_key=RGAPI-c44697f9-243e-4784-8aa4-72c4d414d0a1',
-				url: 'https://restcountries.eu/rest/v2/all?fields=name',
+				url: 'https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Skelet0r?api_key=RGAPI-c44697f9-243e-4784-8aa4-72c4d414d0a1',
+				//url: 'https://restcountries.eu/rest/v2/all?fields=name',
 				success: function(jsondata)
 				{
 					console.log(jsondata);
