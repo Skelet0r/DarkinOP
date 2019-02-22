@@ -21,7 +21,7 @@ component
 			
 			$scope.getSummoner = function()
 			{
-				summonerService.getSummonerData()
+				summonerService.getSummonerData2()
                 .then
 				(
 					function (response)
@@ -46,12 +46,7 @@ component
                 );
 			}
 			
-			$scope.getSummoner2 = function()
-			{
-				summonerService.getSummonerData2();
-			}
-			
-			$scope.getSummoner2();
+			$scope.getSummoner();
         }
     }
 );

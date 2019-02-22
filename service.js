@@ -35,7 +35,7 @@ angular.module('MyApp')
 		var response = null;
 		var data = null;
 		
-		$.ajax
+		/*$.ajax
 		(
 			{
 				type: 'GET',
@@ -46,6 +46,23 @@ angular.module('MyApp')
 				success: function(jsondata)
 				{
 					console.log(jsondata);
+				}
+			}
+		);*/
+		
+		return $http
+		(
+			{
+				method: 'GET',
+				url: 'https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Skelet0r',
+				headers:
+				{
+					'Access-Control-Allow-Origin': '*'
+					//"X-Riot-Token": "RGAPI-c44697f9-243e-4784-8aa4-72c4d414d0a1"
+				},
+				params:
+				{
+					'api_key': 'RGAPI-2d240b1d-76f5-4e28-82cc-18f64cba979d'
 				}
 			}
 		);
