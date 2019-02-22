@@ -17,7 +17,7 @@ component
         },*/
         controller: function(summonerService, $http, $scope)
         {
-            console.log('Hola xd');
+            //console.log('Hola xd');
 			
 			$scope.getSummoner = function()
 			{
