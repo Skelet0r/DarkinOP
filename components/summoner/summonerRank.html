@@ -1,0 +1,157 @@
+<div>
+    <md-content class="md-padding">
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-click="goto(0)" name="soloQ">
+                Solo Queue
+            </md-nav-item>
+            
+            <md-nav-item md-nav-click="goto(1)" name="flex5">
+                Flex 5 vs 5
+            </md-nav-item>
+            
+            <md-nav-item md-nav-click="goto(2)" name="flex3">
+                Flex 3 vs 3
+            </md-nav-item>
+        </md-nav-bar>
+                
+        <!--span>{{status}}</span-->
+
+        <div class="containerElo" layout="row" layout-align="space-around center">
+            <div flex="50" layout="column" layout-align="center center">
+                <img ng-src="{{elos[currentQueue].icon}}" class="md-avatar" height="64" width="64">
+            </div>
+            
+            <div flex="50" layout="column" layout-align="center start">
+                <p class="eloData">
+                    Wins: {{elos[currentQueue].wins}} <br/>
+                    Losses: {{elos[currentQueue].losses}} <br/>
+                    Tier: {{elos[currentQueue].tier}} <br/>
+                    League name: {{elos[currentQueue].league}}
+                </p>
+            </div>
+        </div>
+       
+        <!--md-content>
+            <md-list flex>
+                <md-subheader style="text-align: center">{{elos[currentQueue].queue}}</md-subheader>
+                <md-list-item class="md-2-line" layout-xs="column" style="border: 2px solid red">
+                    <img ng-src="{{elos[currentQueue].icon}}" class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <p>Wins: {{elos[currentQueue].wins}}</p>
+                        <p>Losses: {{elos[currentQueue].losses}}</p>
+                        <p>Tier: {{elos[currentQueue].tier}}</p>
+                        <p>League name: {{elos[currentQueue].league}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content-->
+                
+        <!--div class="ext-content">
+            External content for `<span>{{currentNavItem}}</span>`.
+        </div-->
+        
+        <!--md-content class="md-padding">
+            <ui-view></ui-view>
+        </md-content-->
+    </md-content>
+</div>
+   
+   <!--div layout="row">
+    <div flex="33">
+        <md-content>
+            <md-list flex>
+                <md-subheader style="text-align: center">{{elos[0].queue}}</md-subheader>
+                <md-list-item class="md-2-line" layout-xs="column" style="border: 2px solid red">
+                    <img ng-src="{{elos[0].icon}}" class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <p>Wins: {{elos[0].wins}}</p>
+                        <p>Losses: {{elos[0].losses}}</p>
+                        <p>Tier: {{elos[0].tier}}</p>
+                        <p>League name: {{elos[0].league}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+    
+    <div flex="33">
+        <md-content>
+            <md-list flex>
+                <md-subheader style="text-align: center">{{elos[1].queue}}</md-subheader>
+                <md-list-item class="md-2-line" layout-xs="column">
+                    <img ng-src="{{elos[1].icon}}" class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <p>Wins: {{elos[1].wins}}</p>
+                        <p>Losses: {{elos[1].losses}}</p>
+                        <p>Tier: {{elos[1].tier}}</p>
+                        <p>League name: {{elos[1].league}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+    
+    <div flex="33">
+        <md-content>
+            <md-list flex>
+                <md-subheader style="text-align: center">{{elos[2].queue}}</md-subheader>
+                <md-list-item class="md-2-line" layout-xs="column">
+                    <img ng-src="{{elos[2].icon}}" class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <p>Wins: {{elos[2].wins}}</p>
+                        <p>Losses: {{elos[2].losses}}</p>
+                        <p>Tier: {{elos[2].tier}}</p>
+                        <p>League name: {{elos[2].league}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div->
+    
+    <!-md-content ng-if="size > 0">
+        <md-list flex>
+            <md-subheader class="md-no-sticky">Elo information</md-subheader>
+            <md-list-item class="md-2-line" ng-repeat="data in information">
+                <img ng-src="{{data.urlElo}}" class="md-avatar"/>
+                <div class="md-list-item-text" layout="column">
+                    <h3>Queue type: {{ data.queueType }}</h3>
+                    <h4>Wins: {{ data.wins }}</h4>
+                    <h4>Losses: {{ data.losses }}</h4>
+                    <h4>Tier: {{ data.rank }}</h4>
+                    <p>League name: {{ data.leagueName }}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+               
+    <!-        <div ng-show="checked">
+                <div>
+                    <canvas id="myChart" width="180px" height="160px"></canvas>
+                </div>
+                <md-list flex>
+                    <md-list-item class="md-2-line">
+                        <div class="md-list-item-text" layout="column">
+                            <p style="text-align: center">Win ratio: {{ winratio }}</p>
+                            <p style="text-align: center">Wins: {{ wins }}</p>
+                            <p style="text-align: center">Losses: {{ losses }}</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+           
+            <md-content ng-if="size == 0">
+                <md-list flex>
+                    <md-subheader class="md-no-sticky">No elo information</md-subheader>
+                    <md-list-item class="md-3-line">
+                        <!--img ng-src="https://cdn.leagueofgraphs.com/img/league-icons-v2/160/0-0.png" class="md-avatar"/->
+                        <img ng-src="https://emoji.slack-edge.com/T064HKNDN/penguin-dance/9ea82b3d6dcb650e.gif" class="md-avatar"/>
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Unranked</h3>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+            
+            
+        </div->
+</div-->

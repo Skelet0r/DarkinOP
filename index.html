@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html ng-app="MyApp">
+<html ng-app="MyApp" ng-cloak>
     <head>
         <title>Welcome</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <script type="text/javascript" src="angular.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- S C R I P T S    A N D    L I B R A R I E S -->
+        <script type="text/javascript" src="js/angular.js"></script>
         <script type="text/javascript" src="app.js"></script>
-		<script type="text/javascript" src="service.js"></script>
-		<script type="text/javascript" src="summoner.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	</head>
+        <script type="application/javascript" src="js/node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+        <script type="application/javascript" src="js/node_modules/angular-material/angular-material.js"></script>
+        <link rel="stylesheet" href="js/node_modules/angular-material/angular-material.css">
+        <script type="application/javascript" src="js/node_modules/angular-animate/angular-animate.js"></script>
+        <script type="application/javascript" src="js/node_modules/angular-aria/angular-aria.js"></script>
+        <script type="application/javascript" src="js/node_modules/chart.js/dist/Chart.js"></script>
+        <script type="text/javascript" src="config/config.js"></script>
+        
+        
+        <!-- C O M P O N E N T S -->
+        <!-- Riot Games API and more. -->
+        <script type="text/javascript" src="components/summoner/summoner.js"></script>
+        <script type="text/javascript" src="components/summoner/summonerRank.js"></script>
+        <script type="text/javascript" src="components/summoner/summonerMatches.js"></script>
+        <script type="text/javascript" src="components/summoner/summonerGraphs.js"></script>
+        <!--script type="text/javascript" src="components/essential-components/welcome.js"></script-->
+        
+        
+        <!-- G R A P H S -->
+        <script src="//www.amcharts.com/lib/4/core.js"></script>
+        <script src="//www.amcharts.com/lib/4/charts.js"></script>
+        
+        
+        <!-- S E R V I C E S -->
+        <script type="text/javascript" src="services/summonerService.js"></script>
+        <script type="text/javascript" src="services/WebServicePerron.js"></script>
+        
+        
+        <!-- S E R V I C E S -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    </head>
     
     <body>
-		<h4>Le gua a ganar coach</h4>
-		
-		<summoner></summoner>
-	</body>
+        
+        <!--menu></menu-->
+        <!--footer></footer-->
+        <!--form-component></form-component-->
+        <!--message></message-->
+        <!--interlude></interlude-->
+        
+        <!--div class="dataContainer">
+            <div class="dataNg">
+                <div ui-view></div>
+            </div>
+        </div-->
+        
+        <summoner></summoner>
+    </body>
 </html>

@@ -1,0 +1,121 @@
+.ext-content
+{
+    padding: 20px;
+    margin: 20px;
+    background-color: #FFF2E0;
+}
+
+.vrepeatContainer #horizontal-container 
+{
+    height: 100px;
+    width: 830px; 
+}
+
+.vrepeatContainer .repeated-item-horizontal
+{
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 84px;
+    padding-top: 35px;
+    text-align: center;
+    width: 50px; 
+}
+
+.vrepeatContainer md-content
+{
+    margin: 16px; 
+}
+         
+.vrepeatContainer md-virtual-repeat-container
+{
+    border: solid 1px grey; 
+}
+
+.iconContribute
+{
+    color: #ff4d4d;
+}
+
+.containerData
+{
+    display: flex;
+    justify-content: center;
+}
+
+/* SELECT FOR REGION */
+.selectdemoSelectHeader
+{
+    /* Please note: All these selectors are only applied to children of elements with the 'selectdemoSelectHeader' class */
+}
+
+.selectdemoSelectHeader .demo-header-searchbox
+{
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+.selectdemoSelectHeader .demo-select-header
+{
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    padding-left: 10.667px;
+    height: 48px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+.selectdemoSelectHeader md-content._md
+{
+    max-height: 240px;
+}
+
+.md-button
+{
+    text-transform: none;
+}
+
+.md-tab
+{
+    text-transform: none;
+}
+
+.md-select-fixed-width
+{
+    width: 150px;
+}
+
+.eloData
+{
+    font-size: 14px;
+    letter-spacing: 0.010em;
+    
+}
+
+._md-nav-button-text
+{
+    color: rgb(0, 150, 136);
+}
+
+.md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar
+{
+    color: rgb(0, 150, 136);
+    background: rgb(0, 150, 136);
+}
+
+.containerElo
+{
+    height: 100px;
+    width: 100%;
+}
+
+.eloData
+{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+}
