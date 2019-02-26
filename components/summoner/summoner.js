@@ -84,7 +84,8 @@ angular.module('MyApp')
                 }
             ];
             
-            
+			this.hero = 'Alo';
+			
             // Getting data about a summoner.
             // SUMMONER WITH TWO QUEUE'S: autofilltop            
             $scope.summoner = 'Skelet0r';
@@ -103,11 +104,14 @@ angular.module('MyApp')
                             $scope.validSummoner = true;
                             $scope.invalidSummoner = false;
                             
-                            console.log(response.data);
+                            //console.log(response.data);
                             
                             $scope.iconSummoner = 'https://opgg-static.akamaized.net/images/profile_icons/profileIcon' + response.data.profileIconId + '.jpg';
                             
+							//this.summonerID = response.data['id'];
                             
+							//console.log(summonerID);
+							
                             $scope.dataSummoner = 
                             {
                                 accountID: response.data['accountId'],

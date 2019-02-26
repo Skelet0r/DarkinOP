@@ -61,6 +61,6 @@ angular.module('MyApp')
         //console.log(summonerID);
         url_summoner = url_base1 + region + url_getDataSummoner + summonerID + endUrlGetSummoner + apiKey;
         //console.log(_finalUrlElo);
-        return $http.get( url_summoner );
+        return $http.get( 'https://la1.api.riotgames.com/lol/league/v4/positions/by-summoner/9bI91QCHTO_ZLWUdK0BYf0YqDU0nFlO5w1YmtzT897ydhA?api_key=RGAPI-1ab8ef0f-a291-4319-86c2-bb81ae16bc86' );
     }
 });

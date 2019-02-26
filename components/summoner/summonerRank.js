@@ -6,8 +6,13 @@ angular.module('MyApp')
     'summonerRank',
     {
         templateUrl:  'components/summoner/summonerRank.html',
-           
-        controller: function($scope, $rootScope, summonerService)
+        
+		bindings:
+		{
+			hero: '='
+  		},
+		
+        controller: function($scope, summonerService)
         {
             
             $scope.currentNavItem = 'soloQ';
@@ -18,8 +23,20 @@ angular.module('MyApp')
                 $scope.currentQueue = page;
                 $scope.status = "Go to " + page;
             };
+			
+			//console.log($ctrl.hero);
+			//console.log(this.bindings.hero);
+			//console.log(this.hero);
+			//console.log(hero);
+			//console.log()
             
-            
+			var $ctrl = this;
+        	$ctrl.$onInit = function() 
+			{
+				//console.log(this.hero);
+				$scope.getRankeds();
+			}
+			
             $scope.rank = '';
             $scope.rankSoloQue = '';
             $scope.rankQueue = '';
@@ -53,6 +70,33 @@ angular.module('MyApp')
                     icon: 'http://opgg-static.akamaized.net/images/medals/gold_2.png'
                 }
             ];
+			
+			$scope.getRankeds = function()
+			{
+				summonerService.getSummonerElo()
+				.then
+                (
+                    function (response)
+                    {
+                        console.log(response.data);
+                    }
+                )
+                .catch
+                (
+                    function(response) 
+                    {
+                        console.log(response.data);
+                    }
+                )
+                .finally
+                (
+                    function()
+                    {
+                        // Task finished in submit summoner.
+                    }
+                );
+			};
+			
             /*$scope.getQueue = function()
             {
                 summonerService.getSummonerElo($scope.data.summonerID)
