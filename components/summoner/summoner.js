@@ -84,11 +84,17 @@ angular.module('MyApp')
                 }
             ];
             
-			this.hero = 'Alo';
+			this.hero = $scope.summonerID;
+			
+			var $ctrl = this;
+        	$ctrl.$onInit = function() 
+			{
+				this.hero = $scope.summonerID;
+			}
 			
             // Getting data about a summoner.
             // SUMMONER WITH TWO QUEUE'S: autofilltop            
-            $scope.summoner = 'Skelet0r';
+            //$scope.summoner = 'Skelet0r';
             $scope.dataSummoner = {};
             $scope.searchSummoner = function ()
             {
@@ -111,6 +117,8 @@ angular.module('MyApp')
 							//this.summonerID = response.data['id'];
                             
 							//console.log(summonerID);
+							
+							$scope.summonerID = response.data['id'];
 							
                             $scope.dataSummoner = 
                             {
