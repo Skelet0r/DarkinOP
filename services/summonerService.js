@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MyApp')
+angular.module('Orion')
 .service('summonerService', function ($http, $mdDialog) 
 {
     var baseUrlGetSummoner = 'https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
@@ -19,7 +19,7 @@ angular.module('MyApp')
     var url_base1 = 'https://';
     var url_base2 = '.api.riotgames.com/lol/';
     var url_api1 = '?api_key=';
-    var url_api2 = 'RGAPI-1ab8ef0f-a291-4319-86c2-bb81ae16bc86';
+    var url_api2 = 'RGAPI-8733c951-c427-4f6a-9f1e-489d63cd655a';
     
     
     // Variables for URL Summoner.
@@ -61,6 +61,6 @@ angular.module('MyApp')
         //console.log(summonerID);
         url_summoner = url_base1 + region + url_getDataSummoner + summonerID + endUrlGetSummoner + apiKey;
         //console.log(_finalUrlElo);
-        return $http.get( 'https://la1.api.riotgames.com/lol/league/v4/positions/by-summoner/9bI91QCHTO_ZLWUdK0BYf0YqDU0nFlO5w1YmtzT897ydhA?api_key=RGAPI-1ab8ef0f-a291-4319-86c2-bb81ae16bc86' );
+        return $http.get( 'https://la1.api.riotgames.com/lol/league/v4/positions/by-summoner/Cj0ybaGkSUSZ6p8B3I1K8WMiMGOsVhScTuhkNvBW_EcZGg?api_key=RGAPI-8733c951-c427-4f6a-9f1e-489d63cd655a' );
     }
 });

@@ -1,4 +1,4 @@
-<div flex>
+<!--div flex>
     <md-toolbar class="md-hue-2" md-colors="{background: 'teal'}">
         <div class="md-toolbar-tools">
             <md-menu>
@@ -22,13 +22,14 @@
                 </md-menu-content>
             </md-menu>
 
-            <h2 flex md-truncate>Summoner information</h2>
+            <h2 flex md-truncate>Orion - OP</h2>
 
-            <md-button class="md-icon-button" aria-label="More" ng-click="redirectToLOL()">
-                <img ng-src="http://opgg-static.akamaized.net/images/logo/logo-lol.png" class="md-avatar"/>
+            <!--md-button class="md-icon-button" aria-label="More" ui-sref="person( { summonerID: summonerID } )"->
+            <md-button class="md-icon-button" aria-label="More" ui-sref="summoner-rank">
+                <img md-svg-icon="img/search.svg" class="md-avatar"/>
             </md-button>
         </div>
-    </md-toolbar>
+    </md-toolbar-->
 
     <div>
         <form name="enterSummoner" layout="column" layout-align="center center">
@@ -53,6 +54,7 @@
             </md-input-container>
         </form>
     </div>
+    
     <span>Name: {{$ctrl.hero}}</span>
     <!-- If we have a valid summoner we show the data about that summoner. -->
     <div flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center">
@@ -80,4 +82,4 @@
         <h4>Sorry :( We couldn't find a summoner.</h4>
         <img src="img/sad.gif" alt="">
     </div>
-</div>
+<!--/div>

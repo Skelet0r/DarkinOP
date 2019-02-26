@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MyApp')
+angular.module('Orion')
 .component
 (
     'summonerRank',

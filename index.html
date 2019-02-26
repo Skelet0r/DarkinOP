@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MyApp" ng-cloak>
+<html ng-app="Orion" ng-cloak>
     <head>
         <title>Welcome</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -17,11 +17,17 @@
         
         
         <!-- C O M P O N E N T S -->
-        <!-- Riot Games API and more. -->
-        <script type="text/javascript" src="components/summoner/summoner.js"></script>
+        <!-- Riot Games API and more. (In order) -->
+        <script type="text/javascript" src="components/home.js"></script>
+        <script type="text/javascript" src="components/menu.js"></script>
+        <script type="text/javascript" src="components/summonerSearch.js"></script>
+        <script type="text/javascript" src="components/summoner.js"></script>
+        
+        
+        <!--script type="text/javascript" src="components/summoner/summoner.js"></script>
         <script type="text/javascript" src="components/summoner/summonerRank.js"></script>
         <script type="text/javascript" src="components/summoner/summonerMatches.js"></script>
-        <script type="text/javascript" src="components/summoner/summonerGraphs.js"></script>
+        <script type="text/javascript" src="components/summoner/summonerGraphs.js"></script-->
         
         
         <!-- G R A P H S -->
@@ -53,6 +59,12 @@
             </div>
         </div-->
         
-        <summoner></summoner>
+        <menu style="padding: 0; margin: 0;"></menu>
+        
+        <div class="dataContainer">
+            <div class="dataNg">
+                <div ui-view></div>
+            </div>
+        </div>
     </body>
 </html>

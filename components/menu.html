@@ -1,0 +1,33 @@
+<div flex class="toolbar">
+    <md-toolbar class="md-hue-2" md-colors="{background: 'teal'}">
+        <div class="md-toolbar-tools">
+            <md-menu>
+                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                    <md-icon md-svg-icon="img/menu.svg"></md-icon>
+                </md-button>
+            
+                <md-menu-content width="6">
+                    <md-menu-item>
+                        <md-button ng-click="announceClick($index)" ui-sref="home">
+                            <md-icon md-svg-icon="img/browser.svg"></md-icon>
+                            About us {{item}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="announceClick($index)">
+                            <md-icon md-svg-icon="img/favorite.svg" class="iconContribute"></md-icon>
+                            Contribute {{item}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <h2 flex md-truncate>Orion - OP</h2>
+
+            <!--md-button class="md-icon-button" aria-label="More" ui-sref="person( { summonerID: summonerID } )"-->
+            <md-button class="md-icon-button" aria-label="More" ui-sref="summonersearch">
+          		<md-icon md-svg-icon="img/research.svg"></md-icon>
+        	</md-button>
+        </div>
+    </md-toolbar>
+</div>

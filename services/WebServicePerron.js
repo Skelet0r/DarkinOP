@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MyApp')
+angular.module('Orion')
 .service('webServicePerron', function ($http) 
 {
     var urlComplete = 'http://localhost:8080/CrunchifyRESTJerseyExample/crunchify/';

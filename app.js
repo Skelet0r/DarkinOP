@@ -1,1 +1,1 @@
-angular.module('MyApp', ['ui.router', 'ngMaterial']);
+angular.module('Orion', ['ui.router', 'ngMaterial']);

@@ -1,0 +1,23 @@
+<div>
+   	<form name="enterSummoner" layout="column" layout-align="center center">
+       	<div layout="row">
+           	<md-input-container flex="58">
+               	<label>Enter summoner</label>
+               	<input type="text" ng-model="summoner" ng-enter="searchSummoner()" ng-change="updateSummoner()" required ng-required="required">
+               	<div ng-messages="enterSummoner.data.summoner.$error">
+                   	<div ng-message="required">This is required!</div>
+               	</div>
+           	</md-input-container>
+            
+           	<md-input-container flex="40">
+               	<label>Region</label>
+               	<md-select ng-model="selectedRegion" placeholder="Region" required ng-class="{'md-select-fixed-width':true}">
+                   	<md-option ng-value="region" ng-repeat="region in regions">{{ region.label }}</md-option>
+               	</md-select>
+           	</md-input-container>
+       	</div>
+       	<md-input-container>
+           	<md-button class="md-raised md-primary" ng-click="check()" md-colors="{background: 'teal'}" ng-disabled="enterSummoner.$invalid" ui-sref="summoner({summonerID: 'adasffffff'})">Search</md-button>
+       	</md-input-container>
+   	</form>
+</div>

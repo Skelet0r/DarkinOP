@@ -2,7 +2,7 @@
 
 am4core.useTheme(am4themes_animated);
 
-angular.module('MyApp')
+angular.module('Orion')
 .component
 (
     'graphPie',

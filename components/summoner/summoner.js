@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MyApp')
+angular.module('Orion')
 .component
 (
     'summoner',
@@ -90,6 +90,7 @@ angular.module('MyApp')
         	$ctrl.$onInit = function() 
 			{
 				this.hero = $scope.summonerID;
+				//console.log(this.hero);
 			}
 			
             // Getting data about a summoner.
@@ -98,8 +99,6 @@ angular.module('MyApp')
             $scope.dataSummoner = {};
             $scope.searchSummoner = function ()
             {
-                var index = $scope.regions.findIndex(x=>x.label === $scope.selectedRegion.label);
-                
                 if($scope.summoner != null)
                 {
                     summonerService.getSummonerData($scope.summoner, $scope.selectedRegion.id)
@@ -119,6 +118,7 @@ angular.module('MyApp')
 							//console.log(summonerID);
 							
 							$scope.summonerID = response.data['id'];
+							console.log($scope.summonerID);
 							
                             $scope.dataSummoner = 
                             {
