@@ -3,8 +3,8 @@
        	<div layout="row">
            	<md-input-container flex="58">
                	<label>Enter summoner</label>
-               	<input type="text" ng-model="summoner" ng-enter="searchSummoner()" ng-change="updateSummoner()" required ng-required="required">
-               	<div ng-messages="enterSummoner.data.summoner.$error">
+               	<input type="text" ng-model="summoner" required>
+               	<div ng-messages="enterSummoner.summoner.$error">
                    	<div ng-message="required">This is required!</div>
                	</div>
            	</md-input-container>
@@ -17,7 +17,7 @@
            	</md-input-container>
        	</div>
        	<md-input-container>
-           	<md-button class="md-raised md-primary" ng-click="check()" md-colors="{background: 'teal'}" ng-disabled="enterSummoner.$invalid" ui-sref="summoner({summonerID: 'adasffffff'})">Search</md-button>
+           	<md-button class="md-raised md-primary" ng-click="check()" md-colors="{background: 'teal'}" ng-disabled="enterSummoner.$invalid">Search</md-button>
        	</md-input-container>
    	</form>
 </div>

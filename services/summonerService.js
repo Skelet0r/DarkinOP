@@ -30,37 +30,22 @@ angular.module('Orion')
     
     // Variables for ELO Summoner.
     // We are using some variables from first API request.
-    
+    var url_getEloSummoner = 'league/v4/positions/by-summoner/';
     // var = url_base + 
 
     this.getSummonerData = function (summoner, region)
     {
-        if (!summoner.replace(/\s/g, '').length)
-        {
-            $mdDialog.show
-            (
-                $mdDialog
-                .alert()
-                .title('Summoner invalid!')
-                .textContent('You need enter a valid Summoner name!')
-                .ok('Okay')
-            );
-        }
-        else
-        {
-            // var web = 'http://rest-service.guides.spring.io/greeting';
-            url_summoner = url_base1 + region + url_base2 + url_getDataSummoner + summoner + url_api1 + url_api2;
+		url_summoner = url_base1 + region + url_base2 + url_getDataSummoner + summoner + url_api1 + url_api2;
             
-            return $http.get(url_summoner);
-        }
+		return $http.get(url_summoner);
     }    
     
     this.getSummonerElo = function(summonerID)
     {
         //console.log('probando');
         //console.log(summonerID);
-        url_summoner = url_base1 + region + url_getDataSummoner + summonerID + endUrlGetSummoner + apiKey;
+        url_summoner = url_base1 + region + url_getDataSummoner + summonerID + endUrlGetSummoner + url_api1 + url_api2;
         //console.log(_finalUrlElo);
-        return $http.get( 'https://la1.api.riotgames.com/lol/league/v4/positions/by-summoner/Cj0ybaGkSUSZ6p8B3I1K8WMiMGOsVhScTuhkNvBW_EcZGg?api_key=RGAPI-8733c951-c427-4f6a-9f1e-489d63cd655a' );
+        return $http.get( url_summoner );
     }
 });

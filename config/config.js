@@ -27,7 +27,15 @@ angular.module('Orion')
     {
         name: 'summoner',
         url: '/summoner',
-        component: 'summoner'
+        component: 'summoner',
+		params: { summonerName: '', summonerRegion: '', summonerRegionAPI: '' }
+    })
+	.state('summonerrank',
+    {
+        name: 'summonerrank',
+        url: '/summonerrank',
+        component: 'summonerrank',
+		params: { summonerName: '', summonerRegion: '', summonerRegionAPI: '' }
     });
 	/*.state('summoner-rank',
     {

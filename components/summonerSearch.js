@@ -70,11 +70,8 @@ angular.module('Orion')
             ];
 			
 			$scope.check = function()
-			{
-				console.log('Summoner name: ' + $scope.summoner);
-				console.log('Region: ' + $scope.selectedRegion.id);
-				
-				//$state.go('summoner', { summonerID: $scope.summoner });
+			{				
+				$state.go('summoner', { summonerName: $scope.summoner, summonerRegion: $scope.selectedRegion.name, summonerRegionAPI: $scope.selectedRegion.id });
 			}
 		}
 	}

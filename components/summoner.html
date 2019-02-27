@@ -1,28 +1,28 @@
 <div>
-	<!--div flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center"-->
-	<div flex layout-wrap layout="column" layout-align="space-around center">
+	<div flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center">
         <md-content>
             <md-list flex>
                 <md-subheader class="md-no-sticky">Information about {{ dataSummoner.summonerName }}'s</md-subheader>
                 <md-list-item class="md-3-line">
-                    <img ng-src="{{ dataSummoner.icon }}" class="md-avatar"/>
+                    <img ng-src="{{iconSummoner}}" class="md-avatar"/>
                     <div class="md-list-item-text" layout="column">
                         <h3>Summoner name: {{ dataSummoner.summonerName }}</h3>
                         <!--h4>ID: {{ data.id }}</h4-->
                         <p>Level: {{ dataSummoner.summonerLevel }}</p>
-                        <p>Region: {{ dataSummoner.summonerRegion.name }}</p>
+                        <p>Region: {{ dataSummoner.summonerRegion }}</p>
                     </div>
                 </md-list-item>
             </md-list>
         </md-content>        
     </div>
     
-    Var: {{$ctrl.summonerID}}
-    Var: {{summonerID}}
-   	
+    <div ng-if="validSummoner">
+    	<summonerrank></summonerrank>
+    </div>
+    
    	<!-- If we haven't a valid summoner we show the data about that summoner. -->
     <div ng-if="invalidSummoner" layout="column" layout-align="space-around center">
         <h4>Sorry :( We couldn't find a summoner.</h4>
-        <img src="img/sad.gif" alt="">
+        <img src="img/sad.gif" alt="">        
     </div>
 </div>
