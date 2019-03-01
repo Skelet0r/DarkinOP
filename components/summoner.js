@@ -7,13 +7,15 @@ angular.module('Orion')
     {
         templateUrl:  'components/summoner.html',
 		
-        controller: function($stateParams, $http, $scope, $state, summonerService)
+        controller: function($stateParams, $http, $scope, $mdDialog, $state, summonerService)
         {
 			$scope.summonerName = $stateParams.summonerName;
 			$scope.summonerRegion = $stateParams.summonerRegion;
 			$scope.summonerRegionAPI = $stateParams.summonerRegionAPI;
 			
 			//console.log('Name: ' + $scope.summonerName + ', region: ' + $scope.summonerRegion + ', API' + $scope.summonerRegionAPI);
+			
+			this.summonerID = 'A ver si llega xd';
 			
 			var $ctrl = this;
         	$ctrl.$onInit = function() 
@@ -83,6 +85,7 @@ angular.module('Orion')
                                     .textContent('The API key has expired!')
                                     .ok('Okay')
                                 );
+								$state.go('home');
                             }
                             
 							// Other error.
@@ -96,6 +99,7 @@ angular.module('Orion')
                                     .textContent('An error has occurred, code: ' + response.data['status'].status_code)
                                     .ok('Okay')
                                 );
+								$state.go('summonersearch');
                             }
                         }
                     )
