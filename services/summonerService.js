@@ -8,7 +8,7 @@ angular.module('Orion')
     var url_base1 = 'https://';
     var url_base2 = '.api.riotgames.com/lol/';
     var url_api1 = '?api_key=';
-    var url_api2 = 'RGAPI-bec01f3e-924d-4ca9-8f55-98eabb78fe0d';
+    var url_api2 = 'RGAPI-12b1ee34-c9d7-4edb-8b44-df04d10600d9';
     
     
     // Variables for URL Summoner.
@@ -30,7 +30,7 @@ angular.module('Orion')
     
     this.getSummonerElo = function(summonerID)
     {
-        url_summoner = url_base1 + url_region + url_base2 + url_getEloSummoner + '9bI91QCHTO_ZLWUdK0BYf0YqDU0nFlO5w1YmtzT897ydhA' + url_api1 + url_api2;
+        url_summoner = url_base1 + url_region + url_base2 + url_getEloSummoner + summonerID + url_api1 + url_api2;
         
 		return $http.get( url_summoner );
     }

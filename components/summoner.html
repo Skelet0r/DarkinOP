@@ -17,7 +17,11 @@
     </div>
     
     <div ng-if="validSummoner">
-    	<summonerrank hero="$ctrl.summonerID"></summonerrank>
+    	<!-- This is for a '=' binding. -->
+    	<!--summonerrank summoner="summonerID"></summonerrank-->
+    	
+    	<!-- This is for a '@' binding. -->
+    	<summonerrank summoner="{{summonerID}}"></summonerrank>
     </div>
     
    	<!-- If we haven't a valid summoner we show the data about that summoner. -->

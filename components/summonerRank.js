@@ -9,31 +9,22 @@ angular.module('Orion')
 		
 		bindings:
 		{
-			hero: '='	
+			summoner: '@'	
 		},
 		
         controller: function($scope, summonerService)
         {
-			$scope.currentNavItem = 'soloQ';
+			$scope.currentNavItem = 'Solo Queue';
             $scope.currentQueue = 0;
 
             $scope.goto = function(page)
             {
                 $scope.currentQueue = page;
-                $scope.status = "Go to " + page;
             };
-			
-			//console.log($ctrl.hero);
-			//console.log(this.bindings.hero);
-			//console.log(this.hero);
-			//console.log(hero);
-			//console.log()
             
-			var $ctrl = this;
-        	$ctrl.$onInit = function() 
+			this.$onInit = function() 
 			{
-				//console.log(this.hero);
-				$scope.getRankeds();
+				$scope.getRankeds(this.summoner);
 			}
 			
             $scope.rank = '';
@@ -45,7 +36,7 @@ angular.module('Orion')
             $scope.elos = 
             [
                 {
-                    queue: 'Queue: SoloQ',
+                    queue: 'Solo Queue',
                     wins: '10',
                     losses: '3',
                     tier: 'Silver II',
@@ -70,14 +61,34 @@ angular.module('Orion')
                 }
             ];
 			
-			$scope.getRankeds = function()
+			$scope.getRankeds = function(summonerID)
 			{
-				summonerService.getSummonerElo()
+				summonerService.getSummonerElo(summonerID)
 				.then
                 (
                     function (response)
                     {
-                        console.log(response.data);
+                        //console.log(response.data);
+                        //console.log(response.data.length);
+						
+						$scope.eloSummoner = [];
+						
+						for(var i = 0; i < response.data.length; i ++)
+						{
+							$scope.eloSummoner.push
+                            (
+								{
+									queueType: (returnQueue(response.data[i]['queueType'])),
+                                    wins: response.data[i]['wins'],
+                                    losses: response.data[i]['losses'],
+                                    rank: (capitalizeFirstLetter(response.data[i]['tier'].toLowerCase(), response.data[i]['rank'])),
+                                    leagueName: response.data[i]['leagueName'],
+                                    urlElo: ($scope.rankElo + response.data[i]['tier'].toLowerCase() + "_" + returnRomanInt(response.data[i]['rank']) + ".png")
+								}
+							);
+						}
+						
+						console.log($scope.eloSummoner);
                     }
                 )
                 .catch
@@ -95,6 +106,50 @@ angular.module('Orion')
                     }
                 );
 			};
+			
+			function capitalizeFirstLetter(s, r)
+            {
+                $scope.rankQueue = s[0].toUpperCase() + s.slice(1) + " " + r;
+                return $scope.rankQueue;
+            }
+            
+            function returnQueue (queue)
+            {
+                if(queue == 'RANKED_SOLO_5x5')
+                {
+                    return 'Solo Queue';
+                }
+                            
+                if(queue == 'RANKED_FLEX_SR')
+                {
+                    return 'Flex 5 vs 5';
+                }
+            }
+            
+            function returnRomanInt (roman)
+            {
+                if(roman == 'I')
+                {
+                    return '1'
+                }
+                else if(roman == 'II')
+                {
+                    return '2'
+                }
+                else if(roman == 'III')
+                {
+                    return '3'
+                }
+                else
+                {
+                    return '4'
+                }
+            }
+            
+            function twoDecimals(value)
+            {
+                return isNaN(value) ? valor : parseFloat(value).toFixed(2);
+            }
 			
 		}
 	}

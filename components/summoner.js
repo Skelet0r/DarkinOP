@@ -9,16 +9,14 @@ angular.module('Orion')
 		
         controller: function($stateParams, $http, $scope, $mdDialog, $state, summonerService)
         {
+			$scope.idSummoner = false;
 			$scope.summonerName = $stateParams.summonerName;
 			$scope.summonerRegion = $stateParams.summonerRegion;
 			$scope.summonerRegionAPI = $stateParams.summonerRegionAPI;
 			
 			//console.log('Name: ' + $scope.summonerName + ', region: ' + $scope.summonerRegion + ', API' + $scope.summonerRegionAPI);
 			
-			this.summonerID = 'A ver si llega xd';
-			
-			var $ctrl = this;
-        	$ctrl.$onInit = function() 
+        	this.$onInit = function() 
 			{
 				if($scope.summonerName == '')
 				{
@@ -49,8 +47,10 @@ angular.module('Orion')
                             
 							//console.log(summonerID);
 							
-							//$scope.summonerID = response.data['id'];
+							$scope.summonerID = response.data['id'];
+							//this.summonerID = 'Cambia kbron';
 							//console.log($scope.summonerID);
+							//$scope.idSummoner = true;
 							
                             $scope.dataSummoner = 
                             {
@@ -71,7 +71,8 @@ angular.module('Orion')
                             {
                                 $scope.validSummoner = false;
                                 $scope.invalidSummoner = true;
-                                console.log('Summoner not found.');
+								//$scope.idSummoner = false;
+                                //console.log('Summoner not found.');
                             }
                             
 							// Else if: API Key expired.
