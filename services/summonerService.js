@@ -8,7 +8,7 @@ angular.module('Orion')
     var url_base1 = 'https://';
     var url_base2 = '.api.riotgames.com/lol/';
     var url_api1 = '?api_key=';
-    var url_api2 = 'RGAPI-12b1ee34-c9d7-4edb-8b44-df04d10600d9';
+    var url_api2 = 'RGAPI-36c00ff9-3bb9-4514-9f88-e273685ac3f7';
     
     
     // Variables for URL Summoner.

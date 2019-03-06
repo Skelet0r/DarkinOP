@@ -88,7 +88,19 @@ angular.module('Orion')
                                 );
 								$state.go('home');
                             }
-                            
+							
+							else if(response.data['status'].status_code == '500')
+                            {
+								$mdDialog.show
+                                (
+                                    $mdDialog
+                                    .alert()
+                                    .title('Ops!')
+                                    .textContent('Problems with Riot Services.')
+                                    .ok('Okay')
+                                );
+								$state.go('home');
+							}
 							// Other error.
                             else
                             {
