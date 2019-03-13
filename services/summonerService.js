@@ -19,11 +19,11 @@ angular.module('Orion')
     // We are using some variables from first API request.
     var url_getEloSummoner = 'league/v4/positions/by-summoner/';
 
-    this.getSummonerData = function (summoner, region)
+    this.getSummonerData = function (summoner, region, regionName)
     {
 		url_region = region;
-		
-		url_summoner = url_base1 + region + url_base2 + url_getDataSummoner + summoner + url_api1 + url_api2;
+		url_summoner = 'http://localhost:3000/api/v1/summonerName/' + region +'/'+ regionName + '/' + summoner;
+		//url_summoner = url_base1 + region + url_base2 + url_getDataSummoner + summoner + url_api1 + url_api2;
             
 		return $http.get(url_summoner);
     }    

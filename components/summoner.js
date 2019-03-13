@@ -33,41 +33,81 @@ angular.module('Orion')
             {
                 if($scope.summonerName != null)
                 {
-                    summonerService.getSummonerData($scope.summonerName, $scope.summonerRegionAPI)
+                    summonerService.getSummonerData($scope.summonerName, $scope.summonerRegionAPI, $scope.summonerRegion)
                     .then
                     (
                         function (response)
-                        {
-                            $scope.validSummoner = true;
-                            $scope.invalidSummoner = false;
-                            
-                            //console.log(response.data);
-                            
-                            $scope.iconSummoner = 'https://opgg-static.akamaized.net/images/profile_icons/profileIcon' + response.data['profileIconId'] + '.jpg';
-                            
-							//console.log(summonerID);
+                        {							
+							if(response.data.status == 200)
+							{
+								$scope.dataSummoner = response.data;
 							
-							$scope.summonerID = response.data['id'];
-							//this.summonerID = 'Cambia kbron';
-							//console.log($scope.summonerID);
-							//$scope.idSummoner = true;
+								$scope.validSummoner = true;
+                            	$scope.invalidSummoner = false;
+							}
 							
-                            $scope.dataSummoner = 
+							else if(response.data.status == 404)
                             {
-                                accountID: response.data['accountId'],
-                                summonerID: response.data['id'],
-                                summonerName: response.data['name'],
-                                summonerLevel: response.data['summonerLevel'],
-                                summonerRegion: $scope.summonerRegion
-                            };
+                                $scope.validSummoner = false;
+                                $scope.invalidSummoner = true;
+                            }
+                            
+							// Else if: API Key expired.
+                            else if(response.data.status == 403)
+                            {
+                                $mdDialog.show
+                                (
+                                    $mdDialog
+                                    .alert()
+                                    .title('Ops!')
+                                    .textContent('The API key has expired!')
+                                    .ok('Okay')
+                                );
+								$state.go('home');
+                            }
+							
+							else if(response.data.status == 500)
+                            {
+								$mdDialog.show
+                                (
+                                    $mdDialog
+                                    .alert()
+                                    .title('Ops!')
+                                    .textContent('Problems with Riot Services.')
+                                    .ok('Okay')
+                                );
+								$state.go('home');
+							}
+							// Other error.
+                            else
+                            {
+                                $mdDialog.show
+                                (
+                                    $mdDialog
+                                    .alert()
+                                    .title('Ops!')
+                                    .textContent('An error has occurred, code: ' + response.data['status'].status_code)
+                                    .ok('Okay')
+                                );
+								$state.go('summonersearch');
+                            }
                         }
                     )
                     .catch
                     (
                         function(response) 
                         {
+							$mdDialog.show
+                            (
+                                $mdDialog
+                                .alert()
+                                .title('Ops!')
+								.textContent('An error has occurred, code: ' + response.data['status'].status_code)
+								.ok('Okay')
+                            );
+							$state.go('summonersearch');
 							// If: Summoner not found.
-                            if(response.data['status'].status_code == '404')
+                            /*if(response.data['status'].status_code == '404')
                             {
                                 $scope.validSummoner = false;
                                 $scope.invalidSummoner = true;
@@ -113,7 +153,7 @@ angular.module('Orion')
                                     .ok('Okay')
                                 );
 								$state.go('summonersearch');
-                            }
+                            }*/
                         }
                     )
                     .finally
