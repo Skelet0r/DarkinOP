@@ -17,6 +17,12 @@ angular.module('Orion')
         url: '/menu',
         component: 'menu'
     })
+	.state('graph',
+    {
+        name: 'graph',
+        url: '/graph',
+        component: 'graph'
+    })
 	.state('summonersearch',
     {
         name: 'summonersearch',

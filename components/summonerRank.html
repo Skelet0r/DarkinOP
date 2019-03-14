@@ -15,7 +15,7 @@
         </md-nav-bar>
 
         <div class="containerElo" layout="row" layout-align="space-around center">
-            <div flex="50" layout="column" layout-align="center center">
+            <div flex="20" layout="column" layout-align="center center">
                 <img ng-src="{{elos[currentQueue].icon}}" class="md-avatar" height="64" width="64">
             </div>
             
@@ -27,6 +27,10 @@
                     Losses: {{elos[currentQueue].losses}} <br/>
                     League points: {{elos[currentQueue].leaguePoints}}
                 </p>
+            </div>
+            
+            <div flex="20" layout="column" layout-align="center center">
+                <graph></graph>
             </div>
         </div>
     </md-content>
