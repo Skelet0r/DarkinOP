@@ -86,7 +86,7 @@ angular.module('Orion')
                                     $mdDialog
                                     .alert()
                                     .title('Ops!')
-                                    .textContent('An error has occurred, code: ' + response.data['status'].status_code)
+                                    .textContent('An error has occurred, code: ' + response.data.status)
                                     .ok('Okay')
                                 );
 								$state.go('summonersearch');
@@ -102,7 +102,7 @@ angular.module('Orion')
                                 $mdDialog
                                 .alert()
                                 .title('Ops!')
-								.textContent('An error has occurred, code: ' + response.data['status'].status_code)
+								.textContent('An error has occurred, code: ' + response.data.status)
 								.ok('Okay')
                             );
 							$state.go('summonersearch');

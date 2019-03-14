@@ -2,7 +2,7 @@
 	<div flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center">
         <md-content>
             <md-list flex>
-                <md-subheader class="md-no-sticky">Information about {{ dataSummoner.summonerName }}'s</md-subheader>
+                <md-subheader class="md-no-sticky">Information about {{ dataSummoner.summoner }}'s</md-subheader>
                 <md-list-item class="md-3-line">
                     <img ng-src="{{ dataSummoner.profileIcon }}" class="md-avatar"/>
                     <div class="md-list-item-text" layout="column">
@@ -21,12 +21,13 @@
     	<!--summonerrank summoner="summonerID"></summonerrank-->
     	
     	<!-- This is for a '@' binding. -->
-    	<!--summonerrank summoner="{{summonerID}}"></summonerrank-->
+    	<summonerrank summoner="{{dataSummoner.summonerID}}"></summonerrank>
     </div>
     
    	<!-- If we haven't a valid summoner we show the data about that summoner. -->
     <div ng-if="invalidSummoner" layout="column" layout-align="space-around center">
         <h4>Sorry :( We couldn't find a summoner.</h4>
+        <h5 style="text-align: center">Did you select the right server? Try searching for the summoner in another region.</h5>
         <img src="img/sad.gif" alt="">        
     </div>
 </div>

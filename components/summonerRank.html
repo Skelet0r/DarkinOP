@@ -1,15 +1,15 @@
 <div>
     <md-content class="md-padding">
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-click="goto(0)" name="soloQ">
+            <md-nav-item md-nav-click="goto(0)" name="Solo Queue">
                 Solo Queue
             </md-nav-item>
             
-            <md-nav-item md-nav-click="goto(1)" name="flex5">
+            <md-nav-item md-nav-click="goto(1)" name="Flex 5 vs 5">
                 Flex 5 vs 5
             </md-nav-item>
             
-            <md-nav-item md-nav-click="goto(2)" name="flex3">
+            <md-nav-item md-nav-click="goto(2)" name="Flex 3 vs 3">
                 Flex 3 vs 3
             </md-nav-item>
         </md-nav-bar>
@@ -21,10 +21,11 @@
             
             <div flex="50" layout="column" layout-align="center start">
                 <p class="eloData">
+                    Tier: {{elos[currentQueue].tier}}<br/>
+                    League: {{elos[currentQueue].leagueName}}<br/>
                     Wins: {{elos[currentQueue].wins}} <br/>
                     Losses: {{elos[currentQueue].losses}} <br/>
-                    Tier: {{elos[currentQueue].tier}} <br/>
-                    League name: {{elos[currentQueue].league}}
+                    League points: {{elos[currentQueue].leaguePoints}}
                 </p>
             </div>
         </div>
