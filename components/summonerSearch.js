@@ -69,6 +69,8 @@ angular.module('Orion')
                 }
             ];
 			
+			$scope.summoner = 'Skelet0r';
+			
 			$scope.check = function()
 			{				
 				$state.go('summoner', { summonerName: $scope.summoner, summonerRegion: $scope.selectedRegion.name, summonerRegionAPI: $scope.selectedRegion.id });

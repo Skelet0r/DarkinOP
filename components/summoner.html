@@ -1,5 +1,5 @@
-<div>
-	<div flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center">
+<div >
+	<div class="summonerComponent" flex layout-wrap ng-if="validSummoner" layout="column" layout-align="space-around center">
         <md-content>
             <md-list flex>
                 <md-subheader class="md-no-sticky">Information about {{ dataSummoner.summoner }}'s</md-subheader>
@@ -22,6 +22,9 @@
     	
     	<!-- This is for a '@' binding. -->
     	<summonerrank summoner="{{dataSummoner.summonerID}}"></summonerrank>
+    	
+    	<summonerstats summoner="{{dataSummoner.accountID}}"></summonerstats>
+    	
     </div>
     
    	<!-- If we haven't a valid summoner we show the data about that summoner. -->

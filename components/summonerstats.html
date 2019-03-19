@@ -1,21 +1,21 @@
 <div class="summonerRank">
     <md-content class="md-padding summonerRank">
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-click="goto(0)" name="Solo Queue">
-                Solo Queue
+            <md-nav-item md-nav-click="goto(0)" name="Matches">
+                Matches
             </md-nav-item>
             
-            <md-nav-item md-nav-click="goto(1)" name="Flex 5 vs 5">
-                Flex 5 vs 5
+            <md-nav-item md-nav-click="goto(1)" name="Best champs">
+                Best champs
             </md-nav-item>
             
-            <md-nav-item md-nav-click="goto(2)" name="Flex 3 vs 3">
-                Flex 3 vs 3
+            <md-nav-item md-nav-click="goto(2)" name="Best duos">
+                Best duos
             </md-nav-item>
         </md-nav-bar>
 
         <div class="containerElo" layout="row" layout-align="space-around center">
-            <div flex="20" layout="column" layout-align="center center">
+            <!--div flex="20" layout="column" layout-align="center center">
                 <img ng-src="{{elos[currentQueue].icon}}" class="md-avatar" height="64" width="64">
             </div>
             
@@ -31,7 +31,7 @@
             
             <div flex="20" layout="column" layout-align="center center">
                 <graph wins="{{elos[currentQueue].wins}}"></graph>
-            </div>
+            </div-->
         </div>
     </md-content>
 </div>
